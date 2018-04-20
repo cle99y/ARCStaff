@@ -54,7 +54,7 @@ public class CreateEmployee extends AppCompatActivity {
 
                 switch (v.getId()) {
                     case R.id.bus_unit:
-                        Toast.makeText( CreateEmployee.this, "clicked BU", Toast.LENGTH_SHORT ).show();
+                        Toast.makeText( CreateEmployee.this, "clicked BUS UNIT", Toast.LENGTH_SHORT ).show();
                         break;
                     case R.id.home_office:
                         Toast.makeText( CreateEmployee.this, "clicked Office", Toast.LENGTH_SHORT ).show();
