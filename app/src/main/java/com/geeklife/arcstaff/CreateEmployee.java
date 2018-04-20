@@ -56,12 +56,12 @@ public class CreateEmployee extends AppCompatActivity {
                     // focus changes to BU
                     case R.id.bus_unit:
                         if ( hasFocus )
-                            Toast.makeText( CreateEmployee.this, "clicked BUS UNIT", Toast.LENGTH_SHORT ).show();
+                            bUnit.setText( "NBU" );
                         break;
                     // focus changes to HO
                     case R.id.home_office:
                         if ( hasFocus )
-                            Toast.makeText( CreateEmployee.this, "clicked Office", Toast.LENGTH_SHORT ).show();
+                            hOffice.setText( "MAN" );
                         break;
                 }
 
