@@ -105,7 +105,7 @@ public class CreateEmployee extends AppCompatActivity {
         protected void onPreExecute() {
             super.onPreExecute();
 
-            //set a process dialogue on UI thread
+            //set a process dialogue on UI thread..
             progressBar.setVisibility( View.VISIBLE );
 
         }
