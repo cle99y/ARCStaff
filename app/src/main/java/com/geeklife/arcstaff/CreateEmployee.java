@@ -76,7 +76,7 @@ public class CreateEmployee extends AppCompatActivity {
             @Override
             public void onClick( View view ) {
 
-                // build JSON Object
+                // build JSON Object TEST GIT
                 try {
                     employee.put( "first_name", fName.getText().toString() );
                     employee.put( "last_name", lName.getText().toString() );
