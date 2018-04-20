@@ -68,10 +68,6 @@ public class CreateEmployee extends AppCompatActivity {
             }
         };
 
-
-        bUnit.setOnFocusChangeListener( focusListener );
-        hOffice.setOnFocusChangeListener( focusListener );
-
         enter.setOnClickListener( new View.OnClickListener() {
             @Override
             public void onClick( View view ) {
@@ -93,6 +89,9 @@ public class CreateEmployee extends AppCompatActivity {
 
             }
         } );
+
+        bUnit.setOnFocusChangeListener( focusListener );
+        hOffice.setOnFocusChangeListener( focusListener );
 
     }
 
