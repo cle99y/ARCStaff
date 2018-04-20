@@ -57,6 +57,8 @@ public class CreateEmployee extends AppCompatActivity {
                         if ( hasFocus )
                             Toast.makeText( CreateEmployee.this, "clicked BUS UNIT", Toast.LENGTH_SHORT ).show();
                         break;
+                        // merge test
+
                     case R.id.home_office:
                         if ( hasFocus )
                             Toast.makeText( CreateEmployee.this, "clicked Office", Toast.LENGTH_SHORT ).show();
