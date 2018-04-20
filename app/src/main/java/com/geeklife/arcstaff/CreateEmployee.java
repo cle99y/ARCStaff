@@ -52,12 +52,14 @@ public class CreateEmployee extends AppCompatActivity {
             @Override
             public void onFocusChange( View v, boolean hasFocus ) {
 
-                switch (v.getId()) {
+                switch ( v.getId() ) {
                     case R.id.bus_unit:
-                        Toast.makeText( CreateEmployee.this, "clicked BUS UNIT", Toast.LENGTH_SHORT ).show();
+                        if ( hasFocus )
+                            Toast.makeText( CreateEmployee.this, "clicked BUS UNIT", Toast.LENGTH_SHORT ).show();
                         break;
                     case R.id.home_office:
-                        Toast.makeText( CreateEmployee.this, "clicked Office", Toast.LENGTH_SHORT ).show();
+                        if ( hasFocus )
+                            Toast.makeText( CreateEmployee.this, "clicked Office", Toast.LENGTH_SHORT ).show();
                         break;
                 }
 
@@ -65,7 +67,7 @@ public class CreateEmployee extends AppCompatActivity {
         };
 
 
-        bUnit.setOnFocusChangeListener( focusListener);
+        bUnit.setOnFocusChangeListener( focusListener );
         hOffice.setOnFocusChangeListener( focusListener );
 
         enter.setOnClickListener( new View.OnClickListener() {
