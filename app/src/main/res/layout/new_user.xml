@@ -11,6 +11,7 @@
     <android.support.constraint.ConstraintLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/new_user_form"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/light_background"
@@ -28,6 +29,7 @@
 
         <TextView
             android:id="@+id/new_user"
+            android:visibility="visible"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
@@ -44,6 +46,7 @@
 
         <EditText
             android:id="@+id/first_name"
+            android:visibility="visible"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
@@ -62,6 +65,7 @@
 
         <TextView
             android:id="@+id/tv_first_name"
+            android:visibility="visible"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -75,6 +79,7 @@
 
         <TextView
             android:id="@+id/err_first_name"
+            android:visibility="visible"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text=""
@@ -88,6 +93,7 @@
 
         <EditText
             android:id="@+id/last_name"
+            android:visibility="visible"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginEnd="16dp"
@@ -104,6 +110,7 @@
 
         <TextView
             android:id="@+id/tv_last_name"
+            android:visibility="visible"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -117,6 +124,7 @@
 
         <TextView
             android:id="@+id/err_last_name"
+            android:visibility="visible"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:textColor="@color/error"
@@ -129,6 +137,7 @@
 
         <TextView
             android:id="@+id/tv_bu"
+            android:visibility="visible"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -142,6 +151,7 @@
 
         <EditText
             android:id="@+id/bus_unit"
+            android:visibility="visible"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginEnd="16dp"
@@ -158,6 +168,7 @@
 
         <TextView
             android:id="@+id/err_bu"
+            android:visibility="visible"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text=""
@@ -171,6 +182,7 @@
 
         <TextView
             android:id="@+id/tv_home_office"
+            android:visibility="visible"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -184,6 +196,7 @@
 
         <EditText
             android:id="@+id/home_office"
+            android:visibility="visible"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginEnd="16dp"
@@ -200,6 +213,7 @@
 
         <TextView
             android:id="@+id/err_home_office"
+            android:visibility="visible"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text=""
@@ -213,6 +227,7 @@
 
         <TextView
             android:id="@+id/tv_email"
+            android:visibility="visible"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -226,6 +241,7 @@
 
         <EditText
             android:id="@+id/email"
+            android:visibility="visible"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginEnd="16dp"
@@ -242,6 +258,7 @@
 
         <TextView
             android:id="@+id/err_email"
+            android:visibility="visible"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text=""
@@ -255,6 +272,7 @@
 
         <EditText
             android:id="@+id/country_code"
+            android:visibility="visible"
             android:layout_width="0dp"
             android:layout_height="35dp"
             android:layout_marginEnd="8dp"
@@ -273,6 +291,7 @@
 
         <TextView
             android:id="@+id/tv_country_code"
+            android:visibility="visible"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -286,6 +305,7 @@
 
         <TextView
             android:id="@+id/err_country_code"
+            android:visibility="visible"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text=""
@@ -299,6 +319,7 @@
 
         <EditText
             android:id="@+id/contact"
+            android:visibility="visible"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginEnd="16dp"
@@ -313,6 +334,7 @@
 
         <TextView
             android:id="@+id/tv_contact"
+            android:visibility="visible"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
@@ -325,6 +347,7 @@
 
         <TextView
             android:id="@+id/err_contact"
+            android:visibility="visible"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text=""
@@ -352,7 +375,7 @@
 
         <Button
             android:id="@+id/btn_enter"
-
+            android:visibility="visible"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="24dp"
@@ -369,6 +392,24 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/err_contact"
             app:layout_constraintVertical_bias="1.0"/>
+
+        <ListView
+            android:id="@+id/list_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="32dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="100dp"
+            android:foregroundGravity="center_horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:visibility="gone"/>
     </android.support.constraint.ConstraintLayout>
 
+
+
 </ScrollView>
+
