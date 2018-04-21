@@ -3,11 +3,15 @@ package com.geeklife.arcstaff;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
@@ -21,6 +25,7 @@ public class CreateEmployee extends AppCompatActivity {
 
     EditText fName, lName, bUnit, hOffice, emailAdd, contact;
 
+    ListView buList, offList;
     // required lists
     String buItems[] = {"Defence", "Nuclear", "Oil & Gas", "Operations", "Rail", "Resourcing"};
     String bu[] = {"DBU", "NBU", "OBU", "OPS", "RBU"};
@@ -35,6 +40,7 @@ public class CreateEmployee extends AppCompatActivity {
         super.onCreate( savedInstanceState );
         setContentView( R.layout.new_user );
 
+        final InputMethodManager imm = (InputMethodManager ) getSystemService( INPUT_METHOD_SERVICE );
 
         Button enter = findViewById( R.id.btn_enter );
 
@@ -44,6 +50,7 @@ public class CreateEmployee extends AppCompatActivity {
         hOffice = findViewById( R.id.home_office );
         emailAdd = findViewById( R.id.email );
         contact = findViewById( R.id.contact );
+        buList = findViewById( R.id.list_view );
 
         employee = new JSONObject();
 
@@ -55,8 +62,11 @@ public class CreateEmployee extends AppCompatActivity {
                 switch ( v.getId() ) {
                     // focus changes to BU
                     case R.id.bus_unit:
-                        if ( hasFocus )
-                            bUnit.setText( "NBU" );
+                        if ( hasFocus ) {
+                            imm.hideSoftInputFromWindow(bUnit.getWindowToken(),0);
+                            setArrayAdapter( buItems );
+                            toggleVisibility();
+                        }
                         break;
                     // focus changes to HO
                     case R.id.home_office:
@@ -73,6 +83,7 @@ public class CreateEmployee extends AppCompatActivity {
             public void onClick( View view ) {
 
                 // build JSON Object
+
                 try {
                     employee.put( "first_name", fName.getText().toString() );
                     employee.put( "last_name", lName.getText().toString() );
@@ -122,5 +133,27 @@ public class CreateEmployee extends AppCompatActivity {
         }
     }
 
+    private ArrayAdapter setArrayAdapter( String arrayToUse[] ) {
+        ArrayAdapter mAdapter = new ArrayAdapter<>
+                ( this, R.layout.lv_rows, arrayToUse );
+        buList.setAdapter( mAdapter );
 
+        return mAdapter;
+    }
+
+    private void toggleVisibility() {
+        ConstraintLayout form = findViewById( R.id.new_user_form );
+        ListView listView = findViewById( R.id.list_view );
+
+        for ( int i = 0; i < form.getChildCount(); i++ ) {
+            View v = form.getChildAt( i );
+            Log.i( "LAYOUT", v.getResources().getResourceName( v.getId() ) );
+            if (v.getVisibility() == View.GONE) {
+                v.setVisibility( View.VISIBLE );
+            } else {
+                v.setVisibility( View.GONE );
+            }
+        }
+
+    }
 }
