@@ -159,7 +159,7 @@
             android:background="@drawable/et_selector"
             android:ems="10"
             android:hint="@string/select_bu"
-            android:inputType="textCapCharacters"
+            android:inputType="textCapCharacters|textNoSuggestions"
             android:padding="8dp"
             android:textSize="14sp"
             app:layout_constraintEnd_toEndOf="parent"
